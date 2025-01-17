@@ -208,47 +208,48 @@ reporting_analyst_task:
     Presentation Deck:
       - A template for PowerPoint deck summarizing findings for leadership with step by step explanation.
       - Show from which agent to get the data from
-  # Dashboard:
-    #   - Interactive visualizations (e.g., using Tableau or Power BI) to explore financial data, market trends, and risks.
-    # Periodic Reports:
-    #   - Monthly updates summarizing recent developments, trends, and changes in key metrics.
-  # A comprehensive and adaptive reporting package that includes:
-    # - In-depth investment summary reports, offering actionable insights and recommendations
-    # - Dynamic, interactive visual dashboards for real-time monitoring and decision-making
-    # - Clear, concise narratives summarizing key opportunities, risks, and market trends
-    # - Regular and adaptive reporting intervals to align with investment goals and market changes
-    # report_structure: 
-    # 1. Executive Summary
-    #   - Overall investment recommendation (Buy/Hold/Sell)
-    #   - Key highlights and critical insights
-    # 2. Financial Performance Overview
-    #   - Current stock price
-    #   - Year-over-year performance
-    #   - Key financial metrics
-    #   - Valuation analysis
-    # 3. Market and Industry Context
-    #   - Macroeconomic trends
-    #   - Sector-specific dynamics
-    #   - Competitive landscape analysis
-    # 4. Risk Assessment
-    #   - Volatility analysis
-    #   - Potential investment risks
-    #   - Risk-adjusted return potential
-    # 5. Technical Analysis Insights
-    #   - Stock price trends
-    #   - Key support and resistance levels
-    #   - Short-term and medium-term price signals
-    # 6. Detailed Recommendations
-    #   - Actionable investment strategies
-    #   - Potential entry and exit points
-    #   - Comparative analysis with sector benchmarks
-    # 7. Appendix
-    #   - Detailed data visualizations
-    #   - Methodology and data sources
-    #   - Disclaimers and limitations
   agent: reporting_analyst
 
 
+    # Dashboard:
+    #     - Interactive visualizations (e.g., using Tableau or Power BI) to explore financial data, market trends, and risks.
+    #   Periodic Reports:
+    #     - Monthly updates summarizing recent developments, trends, and changes in key metrics.
+    # A comprehensive and adaptive reporting package that includes:
+    #   - In-depth investment summary reports, offering actionable insights and recommendations
+    #   - Dynamic, interactive visual dashboards for real-time monitoring and decision-making
+    #   - Clear, concise narratives summarizing key opportunities, risks, and market trends
+    #   - Regular and adaptive reporting intervals to align with investment goals and market changes
+    #   report_structure: 
+    #   1. Executive Summary
+    #     - Overall investment recommendation (Buy/Hold/Sell)
+    #     - Key highlights and critical insights
+    #   2. Financial Performance Overview
+    #     - Current stock price
+    #     - Year-over-year performance
+    #     - Key financial metrics
+    #     - Valuation analysis
+    #   3. Market and Industry Context
+    #     - Macroeconomic trends
+    #     - Sector-specific dynamics
+    #     - Competitive landscape analysis
+    #   4. Risk Assessment
+    #     - Volatility analysis
+    #     - Potential investment risks
+    #     - Risk-adjusted return potential
+    #   5. Technical Analysis Insights
+    #     - Stock price trends
+    #     - Key support and resistance levels
+    #     - Short-term and medium-term price signals
+    #   6. Detailed Recommendations
+    #     - Actionable investment strategies
+    #     - Potential entry and exit points
+    #     - Comparative analysis with sector benchmarks
+    #   7. Appendix
+    #     - Detailed data visualizations
+    #     - Methodology and data sources
+    #     - Disclaimers and limitations
+    
 
 # metric_agent_task:
 #   description: >

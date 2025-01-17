@@ -19,10 +19,12 @@ def run():
     Run the crew with specific company stock research inputs.
     """
     inputs = {
-        'company_name': 'Link Asset Management',
-        'stock_ticker': '823.HK',  # Hong Kong Stock Exchange ticker
-        'industry': 'Real Estate'
-    }
+            'company_name': 'Microsoft',
+            'stock_ticker': 'MSFT',
+            'industry': 'Technology'
+    } 
+    
+
     MyStockCrew().crew().kickoff(inputs=inputs)
 
 
@@ -31,10 +33,11 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        'company_name': 'Link Asset Management',
-        'stock_ticker': '823.HK',  # Hong Kong Stock Exchange ticker
-        'industry': 'Real Estate'
-    }
+            'company_name': 'Microsoft',
+            'stock_ticker': 'MSFT',
+            'industry': 'Technology'
+    } 
+    
     try:
         MyStockCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
@@ -56,10 +59,11 @@ def test():
     Test the crew execution and returns the results.
     """
     inputs = {
-        'company_name': 'Link Asset Management',
-        'stock_ticker': '823.HK',  # Hong Kong Stock Exchange ticker
-        'industry': 'Real Estate'
-    }
+            'company_name': 'Microsoft',
+            'stock_ticker': 'MSFT',
+            'industry': 'Technology'
+    } 
+
     try:
         MyStockCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
