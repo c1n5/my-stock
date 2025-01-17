@@ -1,0 +1,272 @@
+# Original Author: CrewAI template
+# Modified by: Cynthia Widjaja
+# Email: cynthia.widjaja@cstu.edu
+# Date of Modification: 13 Dec 2024
+# Description: Modified the CrewAI template to generate a financial research report based on input for company name, stock ticker, and industry.
+# Version: 1.0
+
+researcher_task:
+  description: >
+    Collect primary and secondary data about {company_name}, competitors, and the {industry}.
+    Monitor news, press releases, earnings reports, and investor presentations.
+    Aggregate customer sentiment data from social media, reviews, and surveys.
+    Track key partnerships, acquisitions, and leadership changes.
+    Stay updated on regulatory developments impacting {company_name} and the {industry}.
+    Ensure all information is current and relevant for the last 10 years.
+  # Conduct a comprehensive research about {company_name} ({stock_ticker}) in the {industry} sector.
+    # Gather detailed information including:
+    # - Company background and recent developments
+    # - Key financial metrics and performance indicators
+    # - Market position and competitive landscape
+    # - Recent news and strategic initiatives
+    # Ensure all information is current and relevant for the recent year.
+    # - Conduct in-depth analysis of {company_name}'s financial performance, including revenue, profitability, and key financial ratios.  
+    # - Monitor market trends and competitor activities to assess {company_name}'s position in the {industry}.  
+    # - Analyze customer sentiment and public perception using data from reviews, social media, and surveys.  
+    # - Track key partnerships, acquisitions, and leadership changes that impact {company_name}'s strategy.  
+    # - Stay updated on regulatory developments and compliance issues affecting {company_name} and the broader {industry}.  
+    # - Review and summarize earnings reports, press releases, and investor presentations.  
+    # - Evaluate innovations in {industry}, such as emerging technologies, to assess potential implications for {company_name}.  
+    # - Use data visualization tools to create clear, actionable reports for stakeholders.  
+    # - Build predictive models to forecast {company_name}'s future performance based on historical data and market trends.  
+    # - Collaborate with cross-functional teams to align research findings with organizational goals and strategies.  
+  expected_output: >
+    Data Repository: A centralized collection of raw data, including:
+      - News articles, press releases, and reports related to {company_name}, competitors, and the {industry}.
+      - Customer sentiment analysis reports (e.g., word clouds, positive/negative trends).
+      - Key events (partnerships, leadership changes, regulatory updates).
+    Fact Sheet: A summary document highlighting key findings, such as:
+      - Recent financial and operational updates from {company_name}.
+      - High-level overview of competitors and market dynamics.
+      - List of emerging risks and opportunities
+  # A comprehensive research report containing:
+    # - 10-15 detailed bullet points highlighting critical insights
+    # - Sources and references for all gathered information
+    # - Key trends and potential impact on the company's future
+  agent: researcher
+
+fundamental_analyst_task:
+  description: >
+    Perform an in-depth financial analysis of {company_name} ({stock_ticker}) 
+    in the {industry} sector. Evaluate:
+    - Financial statements (balance sheet, income statement, cash flow)
+    - Key financial ratios (P/E, P/B, ROE, ROA)
+    - Revenue growth and profitability trends
+    - Debt levels and financial stability
+  # Analyze {company_name}’s financial statements, including revenue, expenses, and profitability.
+    # Assess key financial ratios such as P/E, debt-to-equity, and return on equity (ROE).
+    # Evaluate cash flow trends and capital structure.
+    # Identify {company_name}’s competitive advantages and economic moat.
+    # Interpret management commentary in earnings reports and calls.
+  expected_output: >
+    Fundamental Analysis Report:
+      - Detailed breakdown of {company_name}’s financial statements (balance sheet, income statement, cash flow).
+      - Financial ratios and KPIs, such as P/E, ROE, and debt-to-equity.
+      - Analysis of earnings reports and management guidance.
+      - A summary of financial strengths and weaknesses.
+    Valuation Models:
+      - Discounted Cash Flow (DCF) analysis.
+      - Peer comparison tables for valuation metrics.
+  # A detailed financial health report including:
+    # - Comprehensive financial ratio analysis
+    # - Comparative metrics against industry benchmarks
+    # - Visualizations of financial performance trends
+    # - Valuation assessment (undervalued, fairly valued, overvalued)
+    # Ensure all information is current and relevant for the recent year.
+  agent: fundamental_analyst
+
+technical_analyst_task:
+  description: >
+    Conduct technical analysis on {stock_ticker} to identify trends, support, and resistance levels.
+    Use indicators like RSI, MACD, and moving averages to predict price movements.
+    Analyze trading volume and price action for volatility.
+    Identify patterns like breakouts, reversals, and continuation formations.
+    Build predictive models for short-term price forecasts.
+    Ensure all information is current and relevant for the past year.
+  # Conduct a technical analysis of {stock_ticker} stock performance.
+    # Analyze:
+    # - Historical price and volume data
+    # - Technical indicators (RSI, MACD, Bollinger Bands)
+    # - Support and resistance levels
+    # - Short-term price movement predictions
+    # Ensure all information is current and relevant for the recent year.
+  expected_output: >
+    Technical Analysis Charts:
+      - Annotated stock price charts showing trends, support/resistance levels, and key patterns.
+      - Indicator-based analyses using RSI, MACD, Bollinger Bands, etc.
+    Trade Signals:
+      - Recommendations for buy, sell, or hold positions based on short-term price trends.
+    Price Projections:
+      - Forecast of {stock_ticker}'s short-term and medium-term price movements with confidence intervals.
+  # A comprehensive technical analysis report containing:
+    # - Detailed technical charts and graphs
+    # - Identification of key technical patterns
+    # - Buy, sell, or hold signals based on technical indicators
+    # - Short-term price movement forecasts
+  agent: technical_analyst
+
+industry_analyst_task:
+  description: >
+    Research market trends, growth drivers, and challenges in the {industry}.
+    Identify emerging technologies and innovations impacting the industry.
+    Analyze regulatory and policy changes that could influence the sector.
+    Benchmark {company_name}’s position relative to competitors.
+    Investigate macroeconomic factors affecting the industry (e.g., interest rates, trade policies).
+  # Evaluate macroeconomic factors and industry trends affecting {company_name} 
+    # in the {industry} sector. Analyze:
+    # - Sector growth potential
+    # - Competitive landscape
+    # - Economic indicators impact
+    # - Emerging technologies and market disruptions
+    # Ensure all information is current and relevant for the recent year.
+  expected_output: >
+    An in-depth industry and market analysis report including:
+      - SWOT analysis of the {industry} sector
+      - Macroeconomic trend insights
+      - Potential opportunities and risks
+      - Competitive positioning of {company_name}
+  #     Industry Overview Report:
+    #   - Key trends shaping the {industry}, including emerging technologies and innovations.
+    #   - Growth drivers, challenges, and competitive landscape analysis.
+    #   - Macroeconomic factors influencing the industry.
+    # Benchmarking Report:
+    #   - Comparison of {company_name} against key competitors on factors such as market share, product offerings, and growth strategies.
+    # Regulatory Impact Summary:
+    #   - A review of regulations and policies affecting {company_name} and the {industry}.
+  agent: industry_analyst
+
+risk_analyst_task:
+  description: >
+    Assess risks related to {company_name}’s financial stability, operations, and market position.
+    Evaluate industry risks, including competition, regulations, and economic factors.
+    Identify external threats such as geopolitical tensions, supply chain disruptions, or inflation.
+    Develop risk scenarios and impact assessments for potential crises.
+    Monitor risks to {company_name}’s reputation based on public perception and media coverage.  
+  # Conduct a comprehensive risk assessment for {stock_ticker} investment.
+    # Evaluate:
+    # - Stock volatility and beta
+    # - Risk-adjusted returns
+    # - Portfolio diversification potential
+    # - Potential financial and market risks
+    # Ensure all information is current and relevant for the recent year.
+  expected_output: >
+    Risk Assessment Matrix:
+      - A detailed matrix categorizing risks by probability and impact.
+    Scenario Analysis Report:
+      - Simulations of potential risks and their implications (e.g., market downturn, regulatory change, supply chain disruptions).
+    Mitigation Strategies:
+      - Recommended actions to reduce financial, operational, or reputational risks.
+  # A detailed risk assessment report containing:
+    # - Volatility and beta calculations
+    # - Sharpe Ratio analysis
+    # - Potential risk mitigation strategies
+    # - Comprehensive risk profile of the investment
+  agent: risk_analyst
+
+decision_analyst_task:
+  description: >
+    Integrate findings from all agents to provide actionable recommendations.
+    Perform scenario analysis for strategic decision-making.
+    Evaluate opportunities for expansion, investment, or cost-cutting.
+    Build decision-support tools like SWOT matrices and prioritization frameworks.
+    Present options and trade-offs to stakeholders for business strategies.
+  # Synthesize findings from all previous research and analysis tasks.
+    # Develop:
+    # - Comprehensive investment recommendation
+    # - Integrated insights from financial, technical, and industry analyses
+    # - Clear, actionable investment strategy
+    # Ensure all information is current and relevant for the recent year.
+  expected_output: >
+    Strategic Recommendations Report:
+      - Clear, actionable recommendations based on synthesized findings from all agents.
+      - Suggested business strategies, such as market expansion, cost reduction, or innovation investment.
+    Scenario Comparison Framework:
+      - Side-by-side evaluation of different strategic options with potential outcomes.
+    SWOT Analysis:
+      - Comprehensive SWOT matrix for {company_name}.
+  # A final investment recommendation report including:
+    # - Buy, hold, or sell recommendation
+    # - Summary of key findings from all analyses
+    # - Potential investment strategy
+    # - Confidence level of the recommendation
+  agent: decision_analyst
+
+reporting_analyst_task:
+  description: >
+    Create comprehensive research reports summarizing findings from all agents.
+    Develop dashboards and visualizations for financial and industry data.
+    Prepare presentation decks for leadership teams.
+    Provide concise executive summaries highlighting key points.
+    Ensure timely updates and reports to stakeholders based on real-time developments.
+  # Design and implement a robust reporting framework to aggregate and synthesize analytical insights:
+    # - Consolidate and synthesize findings from diverse analytical agents into cohesive reports
+    # - Develop interactive dashboards to visually represent key data points and trends
+    # - Provide periodic and real-time updates, enabling data-driven investment intelligence
+  expected_output: >
+    Executive Summary:
+      - A concise 1-2 page document highlighting key insights, risks, and recommendations.
+    Presentation Deck:
+      - A template for PowerPoint deck summarizing findings for leadership with step by step explanation.
+      - Show from which agent to get the data from
+  # Dashboard:
+    #   - Interactive visualizations (e.g., using Tableau or Power BI) to explore financial data, market trends, and risks.
+    # Periodic Reports:
+    #   - Monthly updates summarizing recent developments, trends, and changes in key metrics.
+  # A comprehensive and adaptive reporting package that includes:
+    # - In-depth investment summary reports, offering actionable insights and recommendations
+    # - Dynamic, interactive visual dashboards for real-time monitoring and decision-making
+    # - Clear, concise narratives summarizing key opportunities, risks, and market trends
+    # - Regular and adaptive reporting intervals to align with investment goals and market changes
+    # report_structure: 
+    # 1. Executive Summary
+    #   - Overall investment recommendation (Buy/Hold/Sell)
+    #   - Key highlights and critical insights
+    # 2. Financial Performance Overview
+    #   - Current stock price
+    #   - Year-over-year performance
+    #   - Key financial metrics
+    #   - Valuation analysis
+    # 3. Market and Industry Context
+    #   - Macroeconomic trends
+    #   - Sector-specific dynamics
+    #   - Competitive landscape analysis
+    # 4. Risk Assessment
+    #   - Volatility analysis
+    #   - Potential investment risks
+    #   - Risk-adjusted return potential
+    # 5. Technical Analysis Insights
+    #   - Stock price trends
+    #   - Key support and resistance levels
+    #   - Short-term and medium-term price signals
+    # 6. Detailed Recommendations
+    #   - Actionable investment strategies
+    #   - Potential entry and exit points
+    #   - Comparative analysis with sector benchmarks
+    # 7. Appendix
+    #   - Detailed data visualizations
+    #   - Methodology and data sources
+    #   - Disclaimers and limitations
+  agent: reporting_analyst
+
+
+
+# metric_agent_task:
+#   description: >
+#     Conduct a comprehensive analysis of computational and financial metrics
+#     for the {company_name} ({stock_ticker}) stock research project.
+#     Specifically, track and evaluate:
+#     - Total execution time for each agent's task
+#     - Computational resource utilization
+#     - Token consumption across different analytical stages
+#     - Estimated financial cost of the research process
+#     - Performance efficiency of each analytical agent
+#   expected_output: >
+#     A detailed performance metrics report including:
+#     - Comprehensive time and cost breakdown
+#     - Computational resource utilization analysis
+#     - Token usage summary for each agent
+#     - Cost-efficiency assessment of the research process
+#     - Recommendations for optimizing future research workflows
+#     - Visualizations of key performance metrics
+#     - Comparative analysis of agent-specific performance
+#   agent: metric_agent

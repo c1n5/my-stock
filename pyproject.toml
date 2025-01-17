@@ -1,0 +1,20 @@
+[project]
+name = "my_stock"
+version = "0.1.0"
+description = "my-stock using crewAI"
+authors = [{ name = "Cynthia Widjaja", email = "cynthia.widjaja@cstu.edu" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.75.0,<1.0.0"
+]
+
+[project.scripts]
+my_stock = "my_stock.main:run"
+run_crew = "my_stock.main:run"
+train = "my_stock.main:train"
+replay = "my_stock.main:replay"
+test = "my_stock.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
